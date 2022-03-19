@@ -11,7 +11,7 @@ jobs:
           command: pip install -r requirements.txt
       - run:
           name: run tests
-          command: docker-compose run app sh -c "python manage.py test"
+          command: python manage.py
 
 workflows:
   build-and-test-workflow:
