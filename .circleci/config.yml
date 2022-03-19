@@ -6,12 +6,6 @@ jobs:
       - image: cimg/python:3.10.1
     steps:
       - checkout
-<<<<<<< HEAD
-=======
-      - python/install-packages:
-          pkg-manager: pip
-
->>>>>>> 5a256652996c7cae0ef5aa52c8f3de657d7ec062
       - run:
           name: install dependencies
           command: pip install -r requirements.txt
