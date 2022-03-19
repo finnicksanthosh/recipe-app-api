@@ -1,22 +1,9 @@
 version: 2.1
+
 jobs:
   build:
-    working_directory: ~/app
-    
-    machine:
-     services:
-       - docker
-
-    dependencies:
-      pre:
-        - pip install docker-compose
-
-    test:
-      pre:
-        - docker-compose up -d
-    
+    docker:
+      - image: cimg/python:3.10.0
     steps:
       - checkout
-      - run:
-          name: compose
-          command: docker-compose run app sh -c "python manage.py test"
+      - run: python --version
