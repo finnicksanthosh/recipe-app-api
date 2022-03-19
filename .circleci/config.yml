@@ -4,9 +4,10 @@ jobs:
   build:
     docker:
       - image: cimg/python:3.10.0
-    dependencies:
-      pre:
-        - pip install docker-compose
+
+    pre-steps: # steps to run before steps defined in the job bar
+      - run:
+          command: pip install docker-compose
     steps:
       - checkout
       - run: python --version
